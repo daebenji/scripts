@@ -3,7 +3,7 @@
 LOCATION=""
 logfile="/var/log/backup.log"
 
-backup_dir="/var/www/vhosts/lvps5-35-240-56.dedicated.hosteurope.de/backup_mindmeister/backup"
+backup_dir=""
 
 echo "backup.sh start $(date)" >> "${logfile}"
 
