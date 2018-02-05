@@ -1,0 +1,1 @@
+netsh advfirewall firewall add rule name="Xming" dir=in action=allow program="C:\Program Files\Xming\Xming.exe" enable=yes LocalSubnet profile=domain

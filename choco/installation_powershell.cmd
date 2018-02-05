@@ -1,0 +1,1 @@
+cmd /K choco install powershell -y
