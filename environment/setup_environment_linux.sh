@@ -1,5 +1,5 @@
 apt update && apt upgrade
-apt install vim git
+apt install vim git sudo
 
 # Public Key
 mkdir .ssh
