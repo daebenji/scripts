@@ -11,7 +11,7 @@ if [[ $EUID -ne 0 ]]; then
    wget https://raw.githubusercontent.com/daebenji/scripts/master/id_rsa_pub -O .ssh/authorized_keys
    
    # bashrc
-   https://raw.githubusercontent.com/daebenji/scripts/master/environment/.bashrc_users -O .bashrc
+   wget https://raw.githubusercontent.com/daebenji/scripts/master/environment/.bashrc_users -O .bashrc
    source .bashrc
    
    # vimrc
@@ -34,7 +34,7 @@ if [[ $EUID -ne 0 ]]; then
    wget https://raw.githubusercontent.com/daebenji/scripts/master/id_rsa_pub -O .ssh/authorized_keys
    
    # bashrc
-   https://raw.githubusercontent.com/daebenji/scripts/master/environment/.bashrc_root -O .bashrc
+   wget https://raw.githubusercontent.com/daebenji/scripts/master/environment/.bashrc_root -O .bashrc
    source .bashrc
    
    # vimrc
