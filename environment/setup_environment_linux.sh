@@ -33,11 +33,15 @@ if [[ $EUID -ne 0 ]]; then
    mkdir .ssh
    wget https://raw.githubusercontent.com/daebenji/scripts/master/id_rsa_pub -O .ssh/authorized_keys
    
-   # bashrc
-   wget https://raw.githubusercontent.com/daebenji/scripts/master/environment/.bashrc_root -O .bashrc
-   source .bashrc
+   # .bashrc
+   wget https://raw.githubusercontent.com/daebenji/scripts/master/environment/.bashrc_root -O /root/.bashrc
+   source /root/.bashrc
    
-   # vimrc
+   # .profile
+   wget https://raw.githubusercontent.com/daebenji/scripts/master/environment/root_profile.txt -O /root/.profile
+   source /root/.profile
+   
+   # .vimrc
    wget https://raw.githubusercontent.com/daebenji/scripts/master/environment/.vimrc_linux_unix -O .vimrc
    git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
    vim +PluginInstall +qall
