@@ -23,7 +23,8 @@ Plugin 'tomasiser/vim-code-dark'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
-colorscheme codedark
+" colorscheme codedark
+colorscheme gruvbox
 :syntax on
 
 let g:airline_theme='codedark' "airline theme (status bar)
