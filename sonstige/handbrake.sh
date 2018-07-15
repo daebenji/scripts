@@ -1,5 +1,5 @@
 #!/bin/bash
-
+set -x
 usage() {
     cat <<EOM
     Usage:
@@ -11,8 +11,8 @@ EOM
 
 [ -z $1 ] && { usage; }
 
-$1 = $SOURCE
-$2 = $DESTINATION
+$SOURCE = $1
+$DESTINATION = $2
 
-cd $SOURCE
-for i in $(ls -1 *.MOV); do cpulimit -l 120 HandBrakeCLI -i $SOURCE/$i -o $DESTINATION/$i -Z "Android 480p30"; done
+cd $1
+for i in $(ls -1 *.MOV); do cpulimit -l 120 HandBrakeCLI -i $i -o $2/$i -Z "Android 480p30"; done
