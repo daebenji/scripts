@@ -1,0 +1,4 @@
+#!/bin/bash
+
+/root/backup/backup-rotate-week       <SERVERNAME>        > /<LOGPATH>/<SERVERNAME>.log
+/root/backup/backup-rotate-week       <SERVERNAME>       >> /<LOGPATH>/<SERVERNAME>.log
