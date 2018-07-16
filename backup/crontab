@@ -1,0 +1,4 @@
+0 23 * * * /usr/bin/apt-get update -qq && /usr/bin/apt-get upgrade -qq > /dev/null 2>&1
+0 21 * * * <PATH-TO-SCRIPT>/cron-rsync  > /dev/null 2>&1
+#0 6 * * * <PATH-TO-SCRIPT>/cron-rotate > /dev/null 2>&1
+0 12 * * 7 <PATH-TO-SCRIPT>/cron-weekly > /dev/null 2>&1
