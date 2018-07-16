@@ -2,6 +2,7 @@
 # Init
 FILE="/tmp/out.$$"
 GREP="/bin/grep"
+VIMRUNTIME="/usr/share/vim/vim81/"
 
 # check if user or root environment
 if [[ $EUID -ne 0 ]]; then
@@ -46,7 +47,7 @@ if [[ $EUID -ne 0 ]]; then
 	   . ~/.profile
 
        # color-scheme gruvbox
-       wget https://raw.githubusercontent.com/daebenji/gruvbox/master/colors/gruvbox.vim -O $VIMRUNTIME/colors/gruvbox.vim
+       sudo wget https://raw.githubusercontent.com/daebenji/gruvbox/master/colors/gruvbox.vim -O $VIMRUNTIME/colors/gruvbox.vim
 	   
 	   # .vimrc
 	   wget https://raw.githubusercontent.com/daebenji/scripts/master/environment/.vimrc_linux_unix -O .vimrc
