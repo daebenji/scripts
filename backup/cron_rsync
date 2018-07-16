@@ -2,12 +2,12 @@
 
 ######### SYNC ##########################################
 
-/root/backup/backup-rsync       <SERVERNAME e.g: webserver.example.com>       /var/lib/postgresql     >  /<LOGFOLDER>/<SERVERNAME>.LOG
-/root/backup/backup-rsync       <SERVERNAME e.g: webserver.example.com>       /opt    >>  /<LOGFOLDER>/<SERVERNAME>.LOG
-/root/backup/backup-rsync       <SERVERNAME e.g: webserver.example.com>       /var    >>  /<LOGFOLDER>/<SERVERNAME>.LOG
-/root/backup/backup-rsync       <SERVERNAME e.g: webserver.example.com>       /etc    >>  /<LOGFOLDER>/<SERVERNAME>.LOG
+<PATH-TO-SCRIPT>/backup-rsync       <SERVERNAME e.g: webserver.example.com>       /var/lib/postgresql     >  /<LOGFOLDER>/<SERVERNAME>.LOG
+<PATH-TO-SCRIPT>/backup-rsync       <SERVERNAME e.g: webserver.example.com>       /opt    >>  /<LOGFOLDER>/<SERVERNAME>.LOG
+<PATH-TO-SCRIPT>/backup-rsync       <SERVERNAME e.g: webserver.example.com>       /var    >>  /<LOGFOLDER>/<SERVERNAME>.LOG
+<PATH-TO-SCRIPT>/backup-rsync       <SERVERNAME e.g: webserver.example.com>       /etc    >>  /<LOGFOLDER>/<SERVERNAME>.LOG
 
 ######### ROTATE ##########################################
 
-/root/backup/backup-rotate       localhost       >> /<LOGFOLDER>/<SERVERNAME>.LOG
-/root/backup/backup-rotate       <SERVERNAME e.g: webserver.example.com>       >>/<LOGFOLDER>/<SERVERNAME>.LOG
+<PATH-TO-SCRIPT>/backup-rotate       localhost       >> /<LOGFOLDER>/<SERVERNAME>.LOG
+<PATH-TO-SCRIPT>/backup-rotate       <SERVERNAME e.g: webserver.example.com>       >>/<LOGFOLDER>/<SERVERNAME>.LOG
