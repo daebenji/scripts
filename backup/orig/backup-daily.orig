@@ -1,0 +1,10 @@
+#
+# Tragen Sie hier die DNS-Namen der zu backuppenden Server ein
+#
+
+/usr/local/bin/backup-rotate server1.domain.de >> /DATA/server1.domain.de-log
+/usr/local/bin/backup-rotate server2.domain.de >> /DATA/server2.domain.de-log
+/usr/local/bin/backup-rotate server3.domain.de >> /DATA/server3.domain.de-log
+/usr/local/bin/backup-rotate server4.domain.de >> /DATA/server4.domain.de-log
+
+
