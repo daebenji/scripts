@@ -21,7 +21,8 @@ if [[ $EUID -ne 0 ]]; then
    # vimrc
    wget https://raw.githubusercontent.com/daebenji/scripts/master/environment/.vimrc_linux_unix -O .vimrc
    git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-   vim +PluginInstall +qall
+   vim +BundleInstall +qall
+   # vim +PluginInstall +qall
    
    exit 0
    
@@ -52,7 +53,8 @@ if [[ $EUID -ne 0 ]]; then
 	   # .vimrc
 	   wget https://raw.githubusercontent.com/daebenji/scripts/master/environment/.vimrc_linux_unix -O .vimrc
 	   git clone https://github.com/daebenji/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-	   vim +PluginInstall +qall
+	   vim +BundleInstall +qall
+           # vim +PluginInstall +qall
 	   exit 0	
    else
 	   pacman -Suy
@@ -75,7 +77,8 @@ if [[ $EUID -ne 0 ]]; then
 	   # .vimrc
 	   wget https://raw.githubusercontent.com/daebenji/scripts/master/environment/.vimrc_linux_unix -O .vimrc
 	   git clone https://github.com/daebenji/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-	   vim +PluginInstall +qall
+	   vim +BundleInstall +qall
+           # vim +PluginInstall +qall
 	   exit 0	
    fi
 fi
