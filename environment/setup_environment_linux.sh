@@ -25,7 +25,7 @@ if [[ $EUID -ne 0 ]]; then
    
    exit 0
    
- else
+/usr/share/vim/vim81/colors/ else
    
    if [[ -f /etc/debian_version ]]; then 
 	   apt update && apt upgrade 
@@ -81,6 +81,6 @@ if [[ $EUID -ne 0 ]]; then
 	   
 	   exit 0   
 
-   fi/usr/share/vim/vim81/colors/
+   fi
 fi
 
