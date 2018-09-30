@@ -68,11 +68,11 @@ else
 	   
 	   # gruvbox
 	   if [[ -d /usr/share/vim/vim81/ ]]; then
-	     wget https://github.com/daebenji/gruvbox/blob/master/colors/gruvbox.vim -O /usr/share/vim/vim81/colors/gruvbox.vim
+	     wget https://raw.githubusercontent.com/daebenji/gruvbox/master/colors/gruvbox.vim -O /usr/share/vim/vim81/colors/gruvbox.vim
 	   fi	   
 	   
 	   if [[ -d /usr/share/vim/vim80/ ]]; then
-	     wget https://github.com/daebenji/gruvbox/blob/master/colors/gruvbox.vim -O /usr/share/vim/vim80/colors/gruvbox.vim
+	     wget https://raw.githubusercontent.com/daebenji/gruvbox/master/colors/gruvbox.vim -O /usr/share/vim/vim80/colors/gruvbox.vim
 	   fi
    	   # .vimrc
    	   wget https://raw.githubusercontent.com/daebenji/scripts/master/environment/.vimrc_linux_unix -O .vimrc
