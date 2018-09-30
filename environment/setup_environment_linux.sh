@@ -46,6 +46,15 @@ else
    	   wget https://raw.githubusercontent.com/daebenji/scripts/master/environment/root_profile.txt -O /root/.profile
    	   source /root/.profile
    	   
+	   # gruvbox
+	   if [[ -d /usr/share/vim/vim81/ ]]; then
+	     wget https://raw.githubusercontent.com/daebenji/gruvbox/master/colors/gruvbox.vim -O /usr/share/vim/vim81/colors/gruvbox.vim
+	   fi	   
+	   
+	   if [[ -d /usr/share/vim/vim80/ ]]; then
+	     wget https://raw.githubusercontent.com/daebenji/gruvbox/master/colors/gruvbox.vim -O /usr/share/vim/vim80/colors/gruvbox.vim
+	   fi
+	   
    	   # .vimrc
    	   wget https://raw.githubusercontent.com/daebenji/scripts/master/environment/.vimrc_linux_unix -O .vimrc
    	   git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
