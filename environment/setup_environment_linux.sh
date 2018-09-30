@@ -24,8 +24,8 @@ if [[ $EUID -ne 0 ]]; then
    vim +PluginInstall +qall
    
    exit 0
-   
-/usr/share/vim/vim81/colors/ else
+
+else
    
    if [[ -f /etc/debian_version ]]; then 
 	   apt update && apt upgrade 
