@@ -7,32 +7,33 @@
 
 
 SERVERNAME=$1
-DIR=/etc/ssl
+DIR=/etc/ssl/private
 TESTFILE=$DIR/can_be_deleted.txt
 touch $TESTFILE
 [ ! -f "$TESTFILE" ] && { echo "Usage: superuser-privileges needed"; exit 1; }
 
 ### CREATE KEY
-openssl genrsa -out $DIR/$SERVERNAME.key.$(date +%Y) 2048
+openssl genrsa -out $DIR/$SERVERNAME.$(date +%Y).key 2048
 
 ### CREATE REQUEST CONF FILE
-echo "[req]" > $DIR/req.conf
-echo "distinguished_name = req_distinguished_name"  >> $DIR/req.conf
-echo "req_extensions = v3_req"  >> $DIR/req.conf
-echo "prompt = no"  >> $DIR/req.conf
-echo "[req_distinguished_name]"  >> $DIR/req.conf
-echo "C = DE"  >> $DIR/req.conf
-echo "ST = Thueringen"  >> $DIR/req.conf
-echo "L = Jena"  >> $DIR/req.conf
-echo "O = Friedrich-Schiller-Universitaet Jena"  >> $DIR/req.conf
-echo "OU = Institut fuer Geographie"  >> $DIR/req.conf
-echo "CN = $SERVERNAME"  >> $DIR/req.conf
-echo "[v3_req]"  >> $DIR/req.conf
-echo "keyUsage = keyEncipherment, dataEncipherment"  >> $DIR/req.conf
-echo "extendedKeyUsage = serverAuth"  >> $DIR/req.conf
-echo "subjectAltName = @alt_names"  >> $DIR/req.conf
-echo "[alt_names]"  >> $DIR/req.conf
-echo "DNS.1 = $SERVERNAME" >> $DIR/req.conf
+echo "[req]" > $DIR/$SERVERNAME.conf
+echo "distinguished_name = req_distinguished_name"  >> $DIR/$SERVERNAME.conf
+echo "req_extensions = v3_req"  >> $DIR/$SERVERNAME.conf
+echo "prompt = no"  >> $DIR/$SERVERNAME.conf
+echo "[req_distinguished_name]"  >> $DIR/$SERVERNAME.conf
+echo "C = DE"  >> $DIR/$SERVERNAME.conf
+echo "ST = Thueringen"  >> $DIR/$SERVERNAME.conf
+echo "L = Gera"  >> $DIR/$SERVERNAME.conf
+echo "O = Foo GmbH"  >> $DIR/$SERVERNAME.conf
+echo "OU = IT"  >> $DIR/$SERVERNAME.conf
+echo "CN = $SERVERNAME"  >> $DIR/$SERVERNAME.conf
+echo "[v3_req]"  >> $DIR/$SERVERNAME.conf
+echo "keyUsage = keyEncipherment, dataEncipherment"  >> $DIR/$SERVERNAME.conf
+echo "extendedKeyUsage = serverAuth"  >> $DIR/$SERVERNAME.conf
+echo "subjectAltName = @alt_names"  >> $DIR/$SERVERNAME.conf
+echo "[alt_names]"  >> $DIR/$SERVERNAME.conf
+echo "DNS.1 = $SERVERNAME" >> $DIR/$SERVERNAME.conf
 
 ### CREATE CSR PEM-FORMAT BASED ON KEY
-openssl req -new -out $DIR/$SERVERNAME.csr.$(date +%Y) -key $DIR/$SERVERNAME.key.$(date +%Y) -config $DIR/req.conf
+openssl req -new -out $DIR/$SERVERNAME.$(date +%Y).csr -key $DIR/$SERVERNAME.$(date +%Y).key -config $DIR/$SERVERNAME.conf
+openssl req -new -x509 -key $DIR/$SERVERNAME.$(date +%Y).key -config $DIR/$SERVERNAME.conf -out /etc/ssl/$SERVERNAME.$(date +%Y).crt -days 365
