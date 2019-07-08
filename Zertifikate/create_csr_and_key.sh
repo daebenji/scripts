@@ -1,39 +1,67 @@
 #!/bin/bash
+source config.txt
 
-# Verify the type of input and number of values
-# Display an error message if the username (input) is not correct
-# Exit the shell script with a status of 1 using exit 1 command.
-[ $# -eq 0 ] && { echo "Usage: $0 servername i.e. server.geogr.uni-jena.de"; exit 1; }
+if [ -z "$REQ_CN" ]
+then
+  if [ $# -eq 0 ]
+  then
+    echo "Usage: $0 servername i.e. server.organisation.tld || or enter REQ_CN in config.txt"
+    exit 1
+  else
+    SERVERNAME=$1
+  fi
+else
+  SERVERNAME=$REQ_CN
+fi
 
-
-SERVERNAME=$1
-DIR=/etc/ssl/private
-TESTFILE=$DIR/can_be_deleted.txt
-touch $TESTFILE
-[ ! -f "$TESTFILE" ] && { echo "Usage: superuser-privileges needed"; exit 1; }
+if [ ! -d "$SERVERNAME" ]
+then
+  echo "OK. Folder $SERVERNAME will be created."
+  mkdir $SERVERNAME && cd $SERVERNAME
+   if [ $? -ne 0 ]
+   then
+     echo "ERROR: Folder $SERVERNAME could not be created."
+     exit 69
+   fi
+else
+  cd $SERVERNAME
+  if [ -d archive ]
+  then
+    mv $SERVERNAME.* archive
+  else
+    mkdir archive && cd archive
+    if [ $? -ne 0 ]
+    then
+      echo "ERROR: Folder $SERVERNAME/archiv could not be created."
+      exit 69
+    else
+      mv $SERVERNAME.* archive
+    fi
+  fi
+fi
 
 ### CREATE KEY
-openssl genrsa -out $DIR/$SERVERNAME.$(date +%Y).key 2048
+openssl genrsa -out $SERVERNAME.$(date +%Y).key 2048
 
 ### CREATE REQUEST CONF FILE
-echo "[req]" > $DIR/$SERVERNAME.conf
-echo "distinguished_name = req_distinguished_name"  >> $DIR/$SERVERNAME.conf
-echo "req_extensions = v3_req"  >> $DIR/$SERVERNAME.conf
-echo "prompt = no"  >> $DIR/$SERVERNAME.conf
-echo "[req_distinguished_name]"  >> $DIR/$SERVERNAME.conf
-echo "C = DE"  >> $DIR/$SERVERNAME.conf
-echo "ST = Thueringen"  >> $DIR/$SERVERNAME.conf
-echo "L = Gera"  >> $DIR/$SERVERNAME.conf
-echo "O = Foo GmbH"  >> $DIR/$SERVERNAME.conf
-echo "OU = IT"  >> $DIR/$SERVERNAME.conf
-echo "CN = $SERVERNAME"  >> $DIR/$SERVERNAME.conf
-echo "[v3_req]"  >> $DIR/$SERVERNAME.conf
-echo "keyUsage = keyEncipherment, dataEncipherment"  >> $DIR/$SERVERNAME.conf
-echo "extendedKeyUsage = serverAuth"  >> $DIR/$SERVERNAME.conf
-echo "subjectAltName = @alt_names"  >> $DIR/$SERVERNAME.conf
-echo "[alt_names]"  >> $DIR/$SERVERNAME.conf
-echo "DNS.1 = $SERVERNAME" >> $DIR/$SERVERNAME.conf
+echo "[req]" > $SERVERNAME.conf
+echo "distinguished_name = req_distinguished_name"  >> $SERVERNAME.conf
+echo "req_extensions = v3_req"  >> $SERVERNAME.conf
+echo "prompt = no"  >> $SERVERNAME.conf
+echo "[req_distinguished_name]"  >> $SERVERNAME.conf
+echo "C = $REQ_C"  >> $SERVERNAME.conf
+echo "ST = $REQ_ST"  >> $SERVERNAME.conf
+echo "L = $REQ_L"  >> $SERVERNAME.conf
+echo "O = $REQ_O"  >> $SERVERNAME.conf
+echo "OU = $REQ_OU"  >> $SERVERNAME.conf
+echo "CN = $SERVERNAME"  >> $SERVERNAME.conf
+echo "[v3_req]"  >> $SERVERNAME.conf
+echo "keyUsage = keyEncipherment, dataEncipherment"  >> $SERVERNAME.conf
+echo "extendedKeyUsage = serverAuth"  >> $SERVERNAME.conf
+echo "subjectAltName = @alt_names"  >> $SERVERNAME.conf
+echo "[alt_names]"  >> $SERVERNAME.conf
+echo "DNS.1 = $SERVERNAME" >> $SERVERNAME.conf
 
 ### CREATE CSR PEM-FORMAT BASED ON KEY
-openssl req -new -out $DIR/$SERVERNAME.$(date +%Y).csr -key $DIR/$SERVERNAME.$(date +%Y).key -config $DIR/$SERVERNAME.conf
-openssl req -new -x509 -key $DIR/$SERVERNAME.$(date +%Y).key -config $DIR/$SERVERNAME.conf -out /etc/ssl/$SERVERNAME.$(date +%Y).crt -days 365
+openssl req -new -out $SERVERNAME.$(date +%Y).csr -key $SERVERNAME.$(date +%Y).key -config $SERVERNAME.conf
+openssl req -new -x509 -key $SERVERNAME.$(date +%Y).key -config $SERVERNAME.conf -out $SERVERNAME.$(date +%Y).crt -days 365

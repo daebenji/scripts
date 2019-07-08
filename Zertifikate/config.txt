@@ -1,0 +1,6 @@
+REQ_C="DE"
+REQ_ST="Berlin"
+REQ_L="LBerlin"
+REQ_O="Humboldt-Universitaet zu Berlin"
+REQ_OU="ATG-ZKS-Server"
+REQ_CN="foo.example.com"
