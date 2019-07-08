@@ -4,3 +4,4 @@ REQ_L="Berlin"
 REQ_O="Foo"
 REQ_OU="Foo"
 REQ_CN="foo.example.com"
+COUNTER=0
